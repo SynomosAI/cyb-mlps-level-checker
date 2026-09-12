@@ -1,0 +1,95 @@
+{
+  "_instructions": "本文件是行业接入四件套之一。域 ID 一经分配不复用。填完跑平台侧校验器自测。",
+  "profile_version": "domain/1.0",
+  "domain_id": "cyb",
+  "domain_name": "网络安全 · 等级保护与关基义务",
+  "operator": {
+    "org": "待认领 — 本域开放给具备资质的运营方",
+    "contact": "见 README 的「认领方式」",
+    "agent_card": "https://SynomosAI.github.io/.well-known/agent-card.json"
+  },
+  "attributes": [
+    {
+      "key": "cyb.mlps_level",
+      "type": "enum",
+      "values": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "undetermined"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "cyb.filing_status",
+      "type": "enum",
+      "values": [
+        "filed",
+        "pending",
+        "expired",
+        "not_required"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "cyb.assessment_result",
+      "type": "enum",
+      "values": [
+        "pass",
+        "conditional",
+        "fail",
+        "not_conducted"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "cyb.cii_status",
+      "type": "enum",
+      "values": [
+        "identified",
+        "candidate",
+        "not_cii",
+        "undetermined"
+      ],
+      "issuer_required": true,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    },
+    {
+      "key": "cyb.pipeline_obligation",
+      "type": "enum",
+      "values": [
+        "none",
+        "self_assessment",
+        "mandatory_review",
+        "prohibited"
+      ],
+      "issuer_required": false,
+      "ttl_days": 365,
+      "assurance_min": "verified",
+      "visibility_default": "private"
+    }
+  ],
+  "checker_endpoint": "mcp://pending-claim/cyb-checker",
+  "gate_map_ref": "./gate-map.json",
+  "privacy_ref": "./privacy.json",
+  "red_lines": [
+    "系统定级以专家评审与公安机关备案为准，AI 不得自行定级",
+    "不得输出「已符合等保要求」类结论，以备案证明与测评报告为唯一依据",
+    "不得建议降低定级、规避测评、简化安全措施或事后补材料"
+  ],
+  "valid_from": "2026-09-12",
+  "status": "RESERVED"
+}
